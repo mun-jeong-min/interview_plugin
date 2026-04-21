@@ -1,6 +1,6 @@
 # /interview-me
 
-Generate technical interview questions from your recent code changes.
+Generate technical interview questions from your code.
 
 ## Usage
 
@@ -14,13 +14,8 @@ Generate technical interview questions from your recent code changes.
 
 ## Options
 
-- `--staged`: Analyze only staged changes (`git diff --staged`)
-- `--recent=<duration>`: Analyze files modified within duration (e.g., `30m`, `2h`, `1d`)
 - `--count=<n>`: Number of questions to generate (default: 3, max: 7)
-- `--focus=<categories>`: Filter by categories (comma-separated: `security,perf,concurrency`)
 - `--lang=<ko|en>`: Question language (default: ko)
-- `--show-answer`: Show model answer outlines
-- `--save`: Save output to `.interview/YYYY-MM-DD-HHmm.md`
 
 ## Instructions
 
@@ -32,8 +27,6 @@ Based on the arguments provided:
 
 1. **No arguments**: Run `git diff HEAD~1` to get the last commit's changes
 2. **File path given**: Read the specified file
-3. **`--staged` flag**: Run `git diff --staged`
-4. **`--recent=Nm` flag**: Find files modified in the last N minutes using `find . -mmin -N -type f`
 
 If no changes are found, inform the user and suggest alternatives.
 
@@ -69,7 +62,6 @@ Create questions following these rules:
 - Clear question text (max 54 chars per line)
 - Code reference (📍 file:line)
 - Hint keywords (💡 Hint: ...)
-- Model answer outline (only if `--show-answer`)
 
 ### Step 4: Output Design
 
@@ -96,7 +88,6 @@ Use this exact visual format:
 
 ─────────────────────────────────────────────────────────────────────
  💬  답변 준비되면 그냥 이어서 말하면 돼.
-     `/interview-me --show-answer` 로 모범 답안 볼 수 있음.
 ─────────────────────────────────────────────────────────────────────
 ```
 
@@ -107,26 +98,6 @@ Use this exact visual format:
 - Question text: max 54 chars per line, auto-wrap
 - Category emojis: 🔒 Security / ⚡ Concurrency / 🚀 Performance / 🏛 Design / 🧪 Testing / 👁 Observability / 🗄 Data
 - Difficulty: ★☆☆ / ★★☆ / ★★★ (exactly this format)
-
-### Step 5: Handle --show-answer
-
-If `--show-answer` is specified, add an answer outline section inside each question box:
-
-```
-│                                                                    │
-│  📝 Answer Outline:                                                │
-│  • Key point 1                                                     │
-│  • Key point 2                                                     │
-│  • Key point 3                                                     │
-│                                                                    │
-```
-
-### Step 6: Handle --save
-
-If `--save` is specified:
-1. Create `.interview/` directory if it doesn't exist
-2. Save output to `.interview/YYYY-MM-DD-HHmm.md`
-3. Confirm the save location to the user
 
 ### Language
 
