@@ -1,0 +1,10 @@
+{
+  "name": "interview-me",
+  "version": "0.1.0",
+  "description": "Transform your recent code changes into technical interview questions. Get practice with realistic follow-up questions from a senior engineer perspective.",
+  "author": {
+    "name": "munjeongmin"
+  },
+  "keywords": ["interview", "code-review", "learning", "practice"],
+  "repository": "https://github.com/munjeongmin/interview-me"
+}
