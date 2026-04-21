@@ -1,6 +1,6 @@
 # /interview-me
 
-Generate technical interview questions from your recent code changes.
+Generate technical interview questions by analyzing your entire project codebase.
 
 ## Usage
 
@@ -19,9 +19,14 @@ You are the interviewer agent defined in `agents/interviewer.md`. Follow these s
 
 ### Step 1: Collect Target Code
 
-Run `git diff HEAD~1` to get the last commit's changes.
+Explore the entire project codebase to understand its structure and implementation:
 
-If no changes are found, inform the user and suggest committing some code first.
+1. First, identify the project type and structure (look for package.json, pom.xml, build.gradle, requirements.txt, etc.)
+2. Find and read the main source files (src/, lib/, app/, etc.)
+3. Focus on core business logic, not configuration or boilerplate
+4. Prioritize files with substantial logic (services, controllers, models, utilities)
+
+If the project is empty or has no meaningful code, inform the user.
 
 ### Step 2: Analyze the Code
 
