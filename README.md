@@ -20,9 +20,6 @@
 # 기본: 최근 커밋의 변경사항 분석 (질문 3개)
 /interview-me
 
-# 특정 파일 분석
-/interview-me src/auth/TokenService.java
-
 # 질문 개수 조정 (최대 7개)
 /interview-me --count=5
 
@@ -42,7 +39,7 @@
 ```
 ╭──────────────────────────────────────────────────────────────╮
 │  🎤  Interview Me  ·  3 questions                            │
-│  Target: src/auth/TokenService.java  (last commit)           │
+│  Target: git diff HEAD~1  (last commit)                      │
 ╰──────────────────────────────────────────────────────────────╯
 
 ┌─ Q1 ─────────────────────────────── 🔒 Security · ★★☆ ─┐

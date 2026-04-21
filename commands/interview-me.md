@@ -1,16 +1,12 @@
 # /interview-me
 
-Generate technical interview questions from your code.
+Generate technical interview questions from your recent code changes.
 
 ## Usage
 
 ```
-/interview-me [file_path] [options]
+/interview-me [options]
 ```
-
-## Arguments
-
-- `file_path` (optional): Specific file to analyze. If omitted, uses `git diff HEAD~1`.
 
 ## Options
 
@@ -23,12 +19,9 @@ You are the interviewer agent defined in `agents/interviewer.md`. Follow these s
 
 ### Step 1: Collect Target Code
 
-Based on the arguments provided:
+Run `git diff HEAD~1` to get the last commit's changes.
 
-1. **No arguments**: Run `git diff HEAD~1` to get the last commit's changes
-2. **File path given**: Read the specified file
-
-If no changes are found, inform the user and suggest alternatives.
+If no changes are found, inform the user and suggest committing some code first.
 
 ### Step 2: Analyze the Code
 
