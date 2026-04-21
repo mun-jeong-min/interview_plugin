@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "interview-me",
-      "source": ".",
+      "source": "./",
       "description": "Transform your recent code changes into technical interview questions. Practice with realistic follow-up questions from a senior engineer perspective.",
       "version": "0.1.0"
     }
