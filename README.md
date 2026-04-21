@@ -18,13 +18,13 @@
 
 ```bash
 # 기본: 프로젝트 전체 코드 분석 (질문 3개)
-/interview-me
+/interview-me:interview-me
 
 # 질문 개수 조정 (최대 7개)
-/interview-me --count=5
+/interview-me:interview-me --count=5
 
 # 영어로 질문
-/interview-me --lang=en
+/interview-me:interview-me --lang=en
 ```
 
 ## 옵션
