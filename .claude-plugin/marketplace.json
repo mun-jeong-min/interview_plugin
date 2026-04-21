@@ -1,0 +1,15 @@
+{
+  "name": "interview-me-marketplace",
+  "owner": {
+    "name": "munjeongmin"
+  },
+  "description": "Marketplace for interview-me plugin - Generate technical interview questions from your code",
+  "plugins": [
+    {
+      "name": "interview-me",
+      "source": ".",
+      "description": "Transform your recent code changes into technical interview questions. Practice with realistic follow-up questions from a senior engineer perspective.",
+      "version": "0.1.0"
+    }
+  ]
+}
